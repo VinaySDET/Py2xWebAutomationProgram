@@ -19,3 +19,6 @@ def test_action():
 
     actions.send_keys_to_element(last_name, "sdet").perform()
     time.sleep(2)
+
+
+    # * perform(): it will do all the activities

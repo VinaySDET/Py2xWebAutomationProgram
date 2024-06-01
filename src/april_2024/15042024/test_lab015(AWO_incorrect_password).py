@@ -25,7 +25,7 @@ from selenium.webdriver.common.by import By
 # Your email, password, IP address or location did not match
 # < / div >
 
-def test_start_browser():
+def test_VWO_Login_negative_Tc():
     # selenium API - Create session
     driver = webdriver.Chrome()
     driver.maximize_window()
@@ -48,18 +48,19 @@ def test_start_browser():
     # * you can use any one assertion out of these 2:  with XPath or without XPath:
 
     # * assertion using XPath:
-    error_msg= driver.find_element(By.XPATH,"//*[text()='Your email, password, IP address or location did not match']")
-    # you can use this XPath comand as well: "//div[@id='js-notification-box-msg']"
+    error_msg = driver.find_element(By.XPATH,
+                                    "//*[text()='Your email, password, IP address or location did not match']")
+    # you can use this XPath command as well: "//div[@id='js-notification-box-msg']"
     print(error_msg.text)
     assert error_msg.text == "Your email, password, IP address or location did not match"
     time.sleep(2)
 
     # * assertion without using XPath:
-    error_msg = driver.find_element(By.ID,"js-notification-box-msg")
+    error_msg = driver.find_element(By.ID, "js-notification-box-msg")
     print(error_msg.text)
     assert error_msg.text == "Your email, password, IP address or location did not match"
     time.sleep(2)
-
     allure.attach(driver.get_screenshot_as_png(), name="Error Screenshot", attachment_type=AttachmentType.PNG)
 
-
+    # * Locators Highest precedence:
+    # * ID, NAME, CLASS NAME, TAG NAME, LINK TEXT, PARTIAL LINK TEXT, CSS SELECTOR, XPATH

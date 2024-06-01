@@ -13,10 +13,10 @@ def test_action():
     #first_name = driver.find_element(By.NAME, "firstname")
     #last_name = driver.find_element(By.NAME, "lastname")
 
-    #  create an object for Action Chain class with CAPS
+    #  *create an object for Action Chain class with CAPS -> to use an action class, you have to create an object of an action chain
     actions = ActionChains(driver)
 
-    # send key to an Action Chain object but with CAPS: {shift down + perform operation + shift up}
+    # *send key to an Action Chain object but with CAPS: {shift down + perform operation + shift up}
     actions \
         .key_down(Keys.SHIFT) \
         .send_keys_to_element(first_name, "vinay") \
@@ -27,4 +27,4 @@ def test_action():
     #     .key_down(Keys.SHIFT) \
     #     .send_keys_to_element(last_name, "sdet") \
     #     .key_up(Keys.SHIFT).perform()
-    # time.sleep(5)
+    time.sleep(5)

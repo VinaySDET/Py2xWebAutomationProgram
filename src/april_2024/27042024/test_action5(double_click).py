@@ -11,12 +11,12 @@ def test_action():
     driver = webdriver.Chrome()
     driver.get("https://awesomeqa.com/selenium/mouse_interaction.html")
 
-    driver.find_element(By.ID, "click")
+    #driver.find_element(By.ID, "click")
 
-    clickable = driver.find_element(By.ID, "click")
+    clickable = driver.find_element(By.ID, "clickable")
     ActionChains(driver) \
         .double_click(clickable)\
         .perform()
-    time.sleep(2)
+    time.sleep(5)
 
 

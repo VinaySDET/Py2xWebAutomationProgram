@@ -7,7 +7,6 @@ from selenium import webdriver
 import time
 from selenium.webdriver.common.actions.wheel_input import ScrollOrigin
 
-
 def test_action():
     driver = webdriver.Chrome()
     url="https://the-internet.herokuapp.com/windows"
@@ -19,6 +18,7 @@ def test_action():
 
     link=driver.find_element(By.LINK_TEXT,"Click Here")
     link.click()
+    time.sleep(2)
 
     window_handles=driver.window_handles
     print(window_handles)

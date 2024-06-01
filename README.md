@@ -12,6 +12,6 @@
 
 '5. pytest src/april_2024/12042024/test_lab001.py --alluredir=allure-results
 
-'6.  allure serve allure-results
+'6. allure serve allure-results
 
-'7. 
+'7. allure.attach(driver.get_screenshot_as_png(), name="Error Screenshot", attachment_type=AttachmentType.PNG)

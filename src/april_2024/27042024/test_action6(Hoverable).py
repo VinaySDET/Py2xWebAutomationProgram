@@ -15,4 +15,4 @@ def test_action():
     ActionChains(driver) \
         .move_to_element(hoverable) \
         .perform()
-    time.sleep(2)
+    time.sleep(5)

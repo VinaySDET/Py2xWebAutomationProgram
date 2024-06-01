@@ -13,14 +13,18 @@ def test_action():
 
     go_next_and_go_back=driver.find_element(By.ID, "click")
     go_next_and_go_back.click()
+    time.sleep(4)
 
     actions_builder = ActionBuilder(driver)
     actions_builder.pointer_action.pointer_up(MouseButton.BACK)
     time.sleep(2)
-    # actions_builder.pointer_action.pointer_down(MouseButton.BACK)
-    actions_builder.perform()
 
+    actions_builder.pointer_action.pointer_down(MouseButton.BACK)
     time.sleep(2)
 
+    actions_builder.perform()
+    time.sleep(2)
+
+# * pointer_action: you can point your mouse to a particular location and you can click on a particular button also.
 # * action_builder: used for mouse pointer events and mouse clicking button but maximum time we will use action chains.
-# * Navigating to a page ,click on release and moving back to previous page.
+# * Navigating to a page ,click on release and move back to the previous page.

@@ -11,13 +11,17 @@ def test_action():
     driver.get("https://awesomeqa.com/selenium/mouse_interaction.html")
 
     clickable = driver.find_element(By.ID, "click")
-    ActionChains(driver) \
+    ActionChains(driver)\
         .click(clickable)\
         .perform()
 
-    #assert "resultPage.html" in driver.current_url
+    # * you can use any one assert
+    # current_url = driver.current_url        # assert method-1
+    # assert current_url == "https://awesomeqa.com/selenium/resultPage.html", "Error - Invalid URL"
+    # time.sleep(5)
 
-    time.sleep(2)
+    assert "resultPage.html" in driver.current_url    # assert method-2
+    time.sleep(5)
     driver.quit()
 
     # click - in normal click action will perform

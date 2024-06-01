@@ -1,4 +1,4 @@
-# * explicit_wait(5): you can tell the driver to wait for only particular element with condition
+# * explicit_wait(5): you can tell the driver to wait for only a particular element with condition.
 
 import logging
 import time
@@ -32,10 +32,11 @@ def test_vwo_login_positive():
     # data-qa="page-heading" >
     # Dashboard
     # < / h1 >
-    # ignore_list = [ElementNotVisibleException, ElementNotSelectableException]
-    # wait = WebDriverWait(driver, timeout=10, poll_frequency=1, ignored_exceptions=ignore_list)
+    ignore_list = [ElementNotVisibleException, ElementNotSelectableException]
+    wait = WebDriverWait(driver, timeout=10, poll_frequency=1, ignored_exceptions=ignore_list)
     wait = WebDriverWait(driver=driver, timeout=10)
-    wait.until(EC.presence_of_element_located((By.XPATH, "//*[@data-qa='page-heading']")))
+    wait.until(EC.text_to_be_present_in_element((By.XPATH, "//*[@data-qa='page-heading']"),"Dashboard"))
+
 
     # < span
     # class ="Fw(semi-bold) ng-binding"
